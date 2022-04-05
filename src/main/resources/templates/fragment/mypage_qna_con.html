@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+
+    <div th:fragment="mypage_qna_con(${qnaList})">
+    <div class="board_arc">
+        <ul class="arc_head">
+            <li class="num">번호</li>
+            <li class="sort">문의구분</li>
+            <li class="date">등록일</li>
+            <li class="info">상세내역</li>
+            <li class="status">관리자 답변여부</li>
+        </ul>
+        <th:block th:each="qna : ${qnaList}">
+        <dl class="arc_body_wrap">
+            <dt>
+                <ul class="arc_body">
+                    <li class="num" th:text="${qnaStat.count}"></li>
+                    <li class="sort"> <span class="cat" th:text="${qna.category}"></span></li>
+                    <li class="date" th:text="${qna.regdate}"></li>
+                    <li class="info" th:text="${qna.content}"></li>
+                    <li class="status">
+                        <div class="comp" th:text="${qna.status}" >답변완료</div>
+                    </li>
+                </ul>
+            </dt>
+            <dd>
+                <div class="arc_dd_cont">
+                    <div class="ab_qna_q" th:text="${qna.content}">
+                        <br /><br />
+                    </div>
+                    <div class="ab_qna_a" th:text="${qna.answer}"></div>
+                </div>
+            </dd>
+        </dl>
+        </th:block>\</div>
+</div>
+
+</html>

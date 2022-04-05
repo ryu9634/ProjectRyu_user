@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+
+<div th:fragment="notice_view(${noticeviewList})">
+<form name="form1" id="form1" method="post" action="https://www.duoback.co.kr/board_process"  target="actionFrame">
+    <input type="hidden" name="mode" id="mode" value="" />
+    <input type="hidden" name="board_id" id="board_id" value="notice" />
+    <input type="hidden" name="reply" id="reply" value="" />
+    <input type="hidden" name="seq" id="board_seq" value="69952" />
+    <input type="hidden" name="popup" value="">
+    <input type="hidden" name="iframe" value="">
+    <input type="hidden" name="goods_seq" value="">
+
+    <div class="board_detail_title" th:text="${noticeviewList.title}">
+        <img th:src="@{/admin/skin/default/images/board/icon/icon_hot.gif}" title="hot" >
+        <div class="bd_date" th:text="noticeviewList.regdate"></div>
+    </div>
+    <div class="board_detail_contents">
+        <p><span style="font-size: 10pt;" th:text="${noticeviewList.content}"></span></p>
+    </div>
+
+    <table class="board_detail_attach" data-responsive="yes" width="100%" cellpadding="0" cellspacing="0">
+        <colgroup>
+            <col width="13%" />
+            <col width="*" />
+        </colgroup>
+
+    </table>
+</form>
+<!-- 이전/다음 글 -->
+<div id="prenextlist" class="other_list"><!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++
+@@ 게시판 이전글/다음글 @@
+- 파일위치 : [스킨폴더]/board/_prenext.html
+++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+    <ul>
+        <li>
+            <span class="pnl_icon"><img th:src="@{/data/skin/responsive_ver1_default_gl_1/images/board/btn/btn_bbs_icon_next.gif}" /></span>
+            <span class="pnl_desc">이전글</span>
+            <span class="pnl_title"><span class="hand highlight-link boad_view_btn sbj"><a th:href="@{/pages/board/(id=${noticeviewList.id}+1)}">[당첨자 발표] 골드리뉴얼 이벤트(12월 6일 추가공지...</a></span>  <img th:src="@{/admin/skin/default/images/board/icon/icon_hot.gif}" title="hot" > </span>
+            <!--span class="pnl_name"><img src="/data/skin/responsive_ver1_default_gl_1/images/board/icon/icon_admin.gif" id="icon_admin_img" align="absmiddle" style="vertical-align:middle;" /></span-->
+        </li>
+    </ul>
+</div>
+</html>

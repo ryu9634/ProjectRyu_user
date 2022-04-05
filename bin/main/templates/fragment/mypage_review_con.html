@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+<div th:fragment="mypage_review_con(${reviewList})">
+    <div class="board_arc">
+            <ul class="arc_head">
+                <li class="num">번호</li>
+                <li class="date">배송일자</li>
+                <li class="info">상품정보</li>
+                <li class="review">상품리뷰</li>
+            </ul>
+        <th:block th:each="review : ${reviewList}">
+            <ul class="arc_body">
+                <li class="num" th:text="${reviewStat.count}"></li>
+                <li class="date" th:text="${review.regdate}"></li>
+                <li class="info" >
+                    <span th:text="${review.title}"></span>
+                </li>
+                <li class="review" th:text="${review.content}"></li>
+
+            </ul>
+        </th:block>
+    </div>
+</div>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+<div th:fragment="mypage_coupon_con(${cp_cnt},${couponList})">
+<ul class="coupon_greeting">
+    <li>
+        <!--고객님께서 보유하고 있는 쿠폰은 <strong>(2/2)장</strong>입니다.-->
+        고객님께서 보유하고 있는 쿠폰은 <strong><span th:text="${cp_cnt}"></span></strong>입니다.
+    </li>
+</ul>
+
+
+<div class="ab_qna_wrap">
+    <div class="board_arc">
+        <ul class="arc_head">
+            <li class="num">번호</li>
+            <li class="date">발급일</li>
+            <li class="coup_title">쿠폰명</li>
+            <li class="benefit">혜택</li>
+            <li class="coup_exp">유효기간</li>
+            <li class="coup_limit">제한금액</li>
+            <li class="coup_status">상태</li>
+        </ul>
+        <th:block th:each="coupon : ${couponList}">
+        <ul class="arc_body coupon_unused">
+            <li class="num" th:text="${couponStat.count}"></li>
+            <li class="date"><span class="motle">발급일 </span><span th:text="${coupon.regdate}"></span></li>
+            <li class="coup_title"><b><span th:text="${coupon.title}"></span></b></li>
+            <li class="benefit" th:text="${coupon.discount}"></li>
+            <li class="coup_exp" th:text="${coupon.enddate}"></li>
+            <li class="coup_limit" th:text="${coupon.limitprice}"></li>
+            <li class="coup_status"><div th:text="${coupon.status}"></div></li>
+        </ul>
+        </th:block>
+    </div>
+
+</div>
+</div>
+</html>

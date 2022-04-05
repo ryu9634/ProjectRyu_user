@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+
+<div th:fragment="mypage_address_con(${addressList})">
+<div class="ab_wish_wrap">
+    <ul class="wish_head">
+        <li class="chk_box"><label class="checkbox_allselect"><input type="checkbox" class="btn_select_all" /><span>전체선택</span></label></li>
+        <li class="chk_basic">전체</li>
+        <li class="addr_name">배송지이름</li>
+        <li class="addr_details">배송지정보</li>
+        <li class="manage">배송지 관리</li>
+    </ul>
+    <th:block th:each="address : ${addressList}" id="list">
+    <ul class="tbody basic_addr">
+        <li class="chk_box"><label><input type="checkbox" name="address_seq[]" value="20597" /></label></li>
+        <li class="chk_basic">
+            <label>
+                <input type="radio" name="default_address" value="20597" checked /> 기본배송지
+            </label>
+        </li>
+        <li class="addr_name" th:text="${address.revname}"></li>
+        <li class="addr_details">
+            <div>
+                <span>받는사람 : </span>
+                <strong class="pointcolor" th:text="${address.revaddname}"></strong>
+            </div>
+            <div>
+                <span>연락처 : </span>
+                <span class="Dib" th:text="${address.user_hp}">>010-1111-1111</span>
+                <span class="Dib"><span class="mo_show">/</span> </span>
+            </div>
+            <div seq="20597">
+                <span>주소 : </span>
+                <span th:text="${address.zipcode}"></span>
+                <span th:text="${address.address1}"></span> <span th:text="${address.address2}"></span>
+            </div>
+        </li>
+        <li class="manage">
+            <button type="button" class="updateaddress btn_resp mo_adj" seq="20597">수정</button>
+            <button type="button" class="btn_resp mo_adj" onclick="delete_address_btn(20597)">삭제</button>
+        </li>
+    </ul>
+    </th:block>
+</div>
+</div>
+
+</html>

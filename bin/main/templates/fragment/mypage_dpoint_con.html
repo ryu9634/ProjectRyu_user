@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+<div th:fragment="mypage_coupon_con(${dp_pointsum},${dpointList})">
+<div class="ab_franchise">
+    <h3>
+        <!--<span class="username">ㅇㅇㅇ(<span class="usergroup">123</span>)</span>-->고객님께서 보유하고 있는 D포인트는 <span class="pointnum" th:text="${dp_pointsum}"></span>원 입니다.
+    </h3>
+</div>
+<div class="board_arc">
+    <ul class="arc_head">
+        <li class="num">번호</li>
+        <li class="date">발급일</li>
+        <li class="info">상세내역</li>
+        <li class="plus">적립금액</li>
+        <li class="expired">유효기간</li>
+        <li class="minus">사용금액</li>
+    </ul>
+    <th:block th:each="dpoint : ${dpointList}">
+    <ul class="arc_body">
+        <li class="num" th:text="${dpointStat.count}"></li>
+        <li class="date" th:text="${dpoint.regdate}"></li>
+        <li class="info" >
+            <div class="subject" th:text="${dpoint.content}"></div>
+        </li>
+        <li class="plus" th:text="${dpoint.pp}"></li>
+        <li class="expired">
+            <span class="motle">유효기간:</span>
+            <span th:text="${dpoint.enddate}"></span></li>
+        <li class="minus" th:text="${dpoint.mm}"></li>
+    </ul>
+    </th:block>
+</div>
+</div>
+</html>

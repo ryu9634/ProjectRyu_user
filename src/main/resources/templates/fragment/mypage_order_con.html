@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+<div th:fragment="mypage_order_con(${orderList})" :id="OcList" class="my_table">
+    <ul class="thead">
+        <li class="buy_date">주문일자</li>
+        <li class="order_seq">주문번호</li>
+        <li class="item_info">주문상품정보</li>
+        <li class="seller"><span designelement="text" textindex="2" texttemplatepath="cmVzcG9uc2l2ZV92ZXIxX2RlZmF1bHRfZ2xfMS9teXBhZ2Uvb3JkZXJfY2F0YWxvZy5odG1s">판매자</span></li>
+        <li class="order_status"><span designelement="text" textindex="3" texttemplatepath="cmVzcG9uc2l2ZV92ZXIxX2RlZmF1bHRfZ2xfMS9teXBhZ2Uvb3JkZXJfY2F0YWxvZy5odG1s">주문상태</span></li>
+    </ul>
+    <th:block th:each="order : ${orderList}">
+    <ul class="tbody">
+        <li class="sjb_date"><span th:text="${order.order_regdate}" id="order_regdate"></span></li>
+        <li class="order_seq"><a th:href="${order.order_num}"></a><span th:text="${order.order_num}" id="order_num"></span></li>
+        <li class="item_info">
+            <div class="item_info_box">
+                <img id="gd_img" th:src="${order.order_gd_img}" th:alt="${order.order_gd_name}">
+                <ul class="oc_item_info_detail">
+                    <li class="detail_tag">
+                        <span class="dtag dtag_com">자사상품</span>
+                        <div class="brand"></div>
+                    </li>
+                    <li class="detail_spec">
+                        <div class="goods_name" th:text="${order.order_gd_name}" id="order_gd_name"></div>
+
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="seller">
+            <!-- <div>듀오백</div> -->
+            <div id="order_seller" th:text="${order.order_seller}"></div>
+            <a href="#seller_01" class="btn_layer_pop" data-seller="1">판매자 정보</a>
+        </li>
+        <li class="order_status1">
+            <p class="status pointcolor" id="order_status" th:text="${order.order_status}"></p>
+        </li>
+        <li>
+            <button type="button" th:onclick="order_refund('${order_num}')">주문취소</button>
+        </li>
+    </ul>
+    </th:block>
+</div>
+</html>

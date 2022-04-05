@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/fb/website#">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8">
+
+    <script
+            nonce="oGmF/0FI2ZRVnhn1EtdloUPKqXEnyLZh3KEfp+dU6Xk=">window.Firstmall = window.Firstmall || {};
+    window.Firstmall.Config = { "Environment": { "MobileMode": true, "SetMode": null, "Language": "KR", "Currency": { "Basic": { "Id": "KRW", "Symbol": "원", "Position": "after" }, "Skin": { "Id": "KRW", "Symbol": "원", "Position": "after" } }, "serviceLimit": { "H_FR": false, "H_AD": true }, "OperationType": "light", "Protocol": "https", "CacheBreaker": "40ab8bcfa0f789f4f2c42141a2313994238a377d" }, "Security": { "PreventDrag": false, "PreventContextMenu": false }, "Search": { "AutoComplete": true, "Suggest": false } };
+    (function () { var aliases = { "gl_operation_type": window.Firstmall.Config.Environment.OperationType, "gl_mobile_mode": window.Firstmall.Config.Environment.MobileMode, "gl_set_mode": window.Firstmall.Config.Environment.SetMode, "gl_language": window.Firstmall.Config.Environment.Language, "gl_basic_currency": window.Firstmall.Config.Environment.Currency.Basic.Id, "gl_skin_currency": window.Firstmall.Config.Environment.Currency.Skin.Id, "gl_basic_currency_symbol": window.Firstmall.Config.Environment.Currency.Basic.Symbol, "gl_basic_currency_symbol_position": window.Firstmall.Config.Environment.Currency.Basic.Position, "gl_protocol": window.Firstmall.Config.Environment.Protocol + "://" }; for (var attr in aliases) { window[attr] = aliases[attr]; } })();</script>
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="facebook-domain-verification" content="nug0dv3lefa93m66ryczcrmqy7w1np" />
+    <meta name="naver-site-verification" content="56010b951fd612e714ac28450e47dfb84313e113" />
+    <title>듀오백</title>
+    <meta name="Robots" content="index,follow" />
+    <meta name="title" content="듀오백" />
+    <meta name="author" content="듀오백" />
+    <meta name="description" content="앉는 모든 것,  I'm your BACK  DUOBACK. 의자에 앉지 마세요 듀오백에 앉으세요." />
+    <meta name="keywords" content="듀오백" />
+
+    <!-- SEO 설정이 있 을경우 -->
+
+    <meta property="og:url" content="https://www.duoback.co.kr/duoback" />
+    <meta property="og:site_name" content="듀오백" />
+    <meta property="og:title" content="듀오백" />
+
+    <meta property="og:description" content="앉는 것에 대한 모든 것 All about seating I m your BACK DUOBACK" />
+
+    <meta property="fb:app_id" content="496090777587666" />
+    <meta property="og:type" content="website" />
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="data/font/font.css" />
+
+    <!-- 구글 웹폰트 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&amp;family=Noto+Sans+KR:wght@100;300;400;500;700;900&amp;display=swap"
+            rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+          href="../cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic%40latest/nanumbarungothicsubset.css">
+    <!--<link href="http://www.openhiun.com/hangul/nanumbarungothic.css" rel="stylesheet" type="text/css">-->
+
+
+    <link rel="stylesheet" type="text/css"
+          href="data/skin/responsive_ver1_default_gl_1/css/jqueryui/black-tie/jquery-ui-1.8.16.custom.css" />
+    <link rel="stylesheet" type="text/css" href="app/javascript/plugin/slick/slick.css"><!-- 반응형 슬라이드 -->
+    <link rel="stylesheet" type="text/css" href="data/design/goods_info_style.css"><!-- 상품디스플레이 CSS -->
+    <link rel="stylesheet" type="text/css" href="data/design/goods_info_user.css">
+    <!-- ++++++++++++ 상품디스플레이 사용자/제작자 CSS ++++++++++++ -->
+    <link rel="stylesheet" type="text/css" href="data/skin/responsive_ver1_default_gl_1/css/lib.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/data/skin/responsive_ver1_default_gl_1/css/common.css" /> -->
+    <link rel="stylesheet" type="text/css" href="data/skin/responsive_ver1_default_gl_1/css/commonff3e.css?v1.0" />
+    <link rel="stylesheet" type="text/css" href="data/skin/responsive_ver1_default_gl_1/css/board.css" />
+    <link rel="stylesheet" type="text/css" href="data/skin/responsive_ver1_default_gl_1/css/buttons.css" />
+    <link rel="stylesheet" type="text/css" href="data/skin/responsive_ver1_default_gl_1/css/mobile_pagination.css" />
+    <link rel="stylesheet" type="text/css" href="link/cssd4e8.css?k=quickdesign&amp;v=20220206213545" />
+    <!-- Quick Design CSS -->
+    <link rel="stylesheet" type="text/css" href="data/skin/responsive_ver1_default_gl_1/css/user.css" />
+    <!-- ++++++++++++ 스킨 사용자/제작자 CSS ++++++++++++ -->
+    <!-- <link rel="stylesheet" type="text/css" href="/data/skin/responsive_ver1_default_gl_1/css/ab_custom.css" /> -->
+    <link rel="stylesheet" type="text/css" href="data/skin/responsive_ver1_default_gl_1/css/ab_customff3e.css?v1.0" />
+    <link rel="stylesheet" type="text/css" href="data/skin/responsive_ver1_default_gl_1/css/devd41d.css?" />
+    <!-- ++++++++++++ 개발용 CSS ++++++++++++ -->
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="data/icon/favicon/faviconFile.ico" />
+    <link rel="stylesheet" href="app/javascript/plugin/touchSlider/swiper.css" />
+    <!-- /CSS -->
+    <link rel="stylesheet" type="text/css" href="app/javascript/plugin/jquery_swipe/jquery_swipe.css" />
+    <!-- 자바스크립트 -->
+    <script src="app/javascript/jquery/jquery.min.js"></script>
+    <script src="app/javascript/jquery/jquery-ui.min.js"></script>
+    <script src="app/javascript/plugin/jquery.poshytip.min.js"></script>
+    <script src="app/javascript/plugin/jquery.activity-indicator-1.0.0.min.js"></script>
+    <script src="app/javascript/plugin/jquery.cookie.js"></script>
+    <script src="app/javascript/plugin/jquery.slides.min.js"></script>
+    <script src="app/javascript/plugin/jquery.placeholder.js"></script>
+    <script src="app/javascript/plugin/validate/jquery.validate.js"></script>
+    <script src="app/javascript/plugin/ezmark/js/jquery.ezmark.min.js"></script>
+    <script src="app/javascript/plugin/custom-select-box.js"></script>
+    <script src="app/javascript/plugin/custom-mobile-pagination.js"></script>
+    <script src="app/javascript/plugin/slick/slick.min.js"></script>
+    <script src="app/javascript/plugin/jquery_swipe/jquery.event.swipe.js"></script>
+    <!--<script src="/app/javascript/plugin/touchSlider/swiper.js"></script-->
+    <script src="data/skin/responsive_ver1_default_gl_1/common/swiper.min.js"></script>
+
+    <script src="../cdn.jsdelivr.net/npm/mobile-detect%401.4.5/mobile-detect.min.js"></script>
+
+    <!-- crema_review -->
+    <script> var md = new MobileDetect(window.navigator.userAgent); if (md.mobile()) { (function (i, s, o, g, r, a, m) { if (s.getElementById(g)); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.id = g; a.async = 1; a.src = r; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'crema-jssdk', '../widgets.cre.ma/duoback.co.kr/mobile/init.js'); } else { (function (i, s, o, g, r, a, m) { if (s.getElementById(g)); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.id = g; a.async = 1; a.src = r; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'crema-jssdk', '../widgets.cre.ma/duoback.co.kr/init.js'); } </script>
+    <script>
+        window.cremaAsyncInit = function () {
+            crema.init(null, null);
+        }
+    </script>
+
+
+
+    <script>
+        var REQURL = 'duoback.html';
+        var WINDOWWIDTH = window.innerWidth;
+    </script>
+
+
+    <style type="text/css">
+        /* 레이아웃설정 폰트 적용 */
+        #layout_body body,
+        #layout_body table,
+        #layout_body div,
+        #layout_body input,
+        #layout_body textarea,
+        #layout_body select,
+        #layout_body span {}
+
+        /* 레이아웃설정 스크롤바색상 적용 */
+    </style>
+
+
+    <!-- /자바스크립트 -->
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: '/data/skin/responsive_ver1_default_gl_1/_modules/common/gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '../www.googletagmanager.com/gtm5445.html?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MW6842V');</script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '../www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-47864109-1', 'auto');
+        ga_require_ec = false;
+        ga('send', 'pageview');
+    </script>
+    <script src="app/javascript/js/dev-toolsf8c2.js?v=40ab8bcfa0f789f4f2c4"></script>
+    <script src="app/javascript/js/goods-display_mobilef8c2.js?v=40ab8bcfa0f789f4f2c4"></script>
+    <script src="app/javascript/js/designf8c2.js?v=40ab8bcfa0f789f4f2c4"></script>
+    <script src="app/javascript/js/commonf8c2.js?v=40ab8bcfa0f789f4f2c4"></script>
+    <script src="app/javascript/js/common-mobilef8c2.js?v=40ab8bcfa0f789f4f2c4"></script>
+    <script src="app/javascript/js/front-layoutf8c2.js?v=40ab8bcfa0f789f4f2c4"></script>
+    <script src="app/javascript/js/base64f8c2.js?v=40ab8bcfa0f789f4f2c4"></script>
+    <script src="app/javascript/js/skin-responsivef8c2.js?v=40ab8bcfa0f789f4f2c4"></script>
+    <script src="data/js/language/L10n_KRf8c2.js?v=40ab8bcfa0f789f4f2c4"></script>
+    <script
+            src="data/skin/responsive_ver1_default_gl_1/common/jquery.event.drag-1.5.minf8c2.js?v=40ab8bcfa0f789f4f2c4"></script>
+    <script
+            src="data/skin/responsive_ver1_default_gl_1/common/jquery.touchSliderf8c2.js?v=40ab8bcfa0f789f4f2c4"></script>
+    <script src="data/skin/responsive_ver1_default_gl_1/common/responsivef8c2.js?v=40ab8bcfa0f789f4f2c4"></script>
+    <script src="data/skin/responsive_ver1_default_gl_1/common/scriptf8c2.js?v=40ab8bcfa0f789f4f2c4"></script>
+    <script src="data/skin/responsive_ver1_default_gl_1/common/search_ver2f8c2.js?v=40ab8bcfa0f789f4f2c4"></script>
+    <script src="data/skin/responsive_ver1_default_gl_1/common/userf8c2.js?v=40ab8bcfa0f789f4f2c4"></script>
+    <script src="app/javascript/plugin/jquery.bxsliderf8c2.js?v=40ab8bcfa0f789f4f2c4"></script>
+</head>
+</html>

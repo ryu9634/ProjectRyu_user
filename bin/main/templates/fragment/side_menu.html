@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+<div th:fragment="side_menu">
+<div id="layout_side" class="layout_side" style="left: -562px; display: none;">
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++
+@@ 어사이드 @@
+- 파일위치 : [스킨폴더]/_modules/common/layout_side.html
+++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <div class="aside_userinformation">
+        <ul class="btn_nm">
+            <li>
+                <a href="./member/login.html" class="btn_login" designelement="text" textindex="2"
+                   texttemplatepath="cmVzcG9uc2l2ZV92ZXIxX2RlZmF1bHRfZ2xfMS9fbW9kdWxlcy9jb21tb24vbGF5b3V0X3NpZGUuaHRtbA==">로그인</a>
+                <a href="./member/agreement.html" class="btn_join" designelement="text" textindex="3"
+                   texttemplatepath="cmVzcG9uc2l2ZV92ZXIxX2RlZmF1bHRfZ2xfMS9fbW9kdWxlcy9jb21tb24vbGF5b3V0X3NpZGUuaHRtbA==">회원가입</a>
+            </li>
+        </ul>
+        <div class="log_noti">듀오백 회원이 되시면 <br>다양한 혜택과 할인, 이벤트에 참여하실 수 있습니다.</div>
+    </div>
+
+    <div class="asie_main_menu">
+        <ul>
+            <li class="am_my">
+                <a href="./mypage/mypage_order.html" class="aside_icon mypage"><span
+                        designelement="text" textindex="4"
+                        texttemplatepath="cmVzcG9uc2l2ZV92ZXIxX2RlZmF1bHRfZ2xfMS9fbW9kdWxlcy9jb21tb24vbGF5b3V0X3NpZGUuaHRtbA==">마이페이지</span></a>
+            </li>
+            <li class="am_order"><a href="./mypage/mypage_order.html" class="aside_icon delivery"><span
+                    designelement="text" textindex="5"
+                    texttemplatepath="cmVzcG9uc2l2ZV92ZXIxX2RlZmF1bHRfZ2xfMS9fbW9kdWxlcy9jb21tb24vbGF5b3V0X3NpZGUuaHRtbA==">주문/배송조회</span></a>
+            </li>
+            <li class="am_wish">
+                <a href="./mypage/mypage_zzim.html" class="aside_icon wish"><span
+                        designelement="text" textindex="6"
+                        texttemplatepath="cmVzcG9uc2l2ZV92ZXIxX2RlZmF1bHRfZ2xfMS9fbW9kdWxlcy9jb21tb24vbGF5b3V0X3NpZGUuaHRtbA==">관심상품</span>
+                </a>
+            </li>
+            <li class="am_cart"><a href="./order/cart.html" class="aside_icon cart"><span designelement="text"
+                                                                                          textindex="7"
+                                                                                          texttemplatepath="cmVzcG9uc2l2ZV92ZXIxX2RlZmF1bHRfZ2xfMS9fbW9kdWxlcy9jb21tb24vbGF5b3V0X3NpZGUuaHRtbA==">장바구니</span>
+            </a></li>
+        </ul>
+    </div>
+    <style>
+        .mitem_title_d {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            background: #f7f7f7;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+
+        .mitem_title_d:before {
+            content: "";
+            display: block;
+            width: 33px;
+            height: 33px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-size: 134px 67px;
+        }
+    </style>
+    <div class="aside_navigation_wrap">
+        <div class="aside_title">카테고리</div>
+        <!-- ++++++++ 카테고리 ++++++++ -->
+        <ul id="categorySideMenu" class="menu" style="display: block;">
+            <li class="mitem category mitem_category mitemicon1">
+                <a class="mitem_title" href="./goods/catalog5366.html" target="_self"></a>
+                <a class="mitem_goodsview" href="./goods/catalog5366.html">
+                    앉는모든
+                </a>
+            </li>
+            <li class="mitem category mitem_category mitemicon1">
+                <a class="mitem_title" href="./goods/catalogb0e9.html" target="_self"></a>
+                <a class="mitem_goodsview" href="./goods/catalogb0e9.html">
+                    앉는공간
+                </a>
+            </li>
+            <li class="mitem category mitem_category mitemicon1">
+                <a class="mitem_title" href="./goods/catalog762d.html" target="_self"></a>
+                <a class="mitem_goodsview" href="./goods/catalog762d.html">
+                    DUOBACK
+                </a>
+            </li>
+            <li class="mitem category mitem_category mitemicon3">
+                <a class="mitem_title" href="./goods/catalog117e.html" target="_self"></a>
+                <a class="mitem_goodsview" href="./goods/catalog117e.html">
+                    바인츠
+                    <div class="subtitle">인테리어의자</div>
+                </a>
+            </li>
+            <li class="mitem category mitem_category mitemicon1">
+                <a class="mitem_title" href="./goods/catalog3bca.html" target="_self"></a>
+                <a class="mitem_goodsview" href="./goods/catalog3bca.html">
+                    라이트오피스
+                    <div class="subtitle">홈오피스가구</div>
+                </a>
+            </li>
+            <li class="mitem category mitem_category mitemicon1">
+                <a class="mitem_title" href="./goods/catalog483b.html" target="_self"></a>
+                <a class="mitem_goodsview" href="./goods/catalog483b.html">
+                    데스크테리어
+                </a>
+            </li>
+            <li class="mitem category mitem_category mitemicon1">
+                <a class="mitem_title" href="./goods/catalog617e.html" target="_self"></a>
+                <a class="mitem_goodsview" href="./goods/catalog617e.html">
+                    셀프A/S
+                </a>
+            </li>
+            <li class="mitem category mitem_category mitemicon3">
+                <a class="mitem_title" href="./goods/catalog9335.html" target="_self"></a>
+                <a class="mitem_goodsview" href="./goods/catalog9335.html">
+                    리퍼마켓
+                </a>
+            </li>
+            <li class="mitem category mitem_category mitemicon1">
+                <a class="mitem_title_d" href="./goods/catalog33b6.html" target="_self"></a>
+                <a class="mitem_goodsview" href="./goods/catalog33b6.html">
+                    D포인트존
+                </a>
+            </li>
+        </ul>
+
+        <!-- ++++++++ //카테고리 ++++++++ -->
+
+        <!-- ++++++++ 커뮤니티 ++++++++ -->
+        <ul id="boardSideMenu" class="menu board" style="display:none;">
+            <li><a href="../board/indexffe2.html" designelement="text" textindex="8"
+                   texttemplatepath="cmVzcG9uc2l2ZV92ZXIxX2RlZmF1bHRfZ2xfMS9fbW9kdWxlcy9jb21tb24vbGF5b3V0X3NpZGUuaHRtbA==">공지사항</a>
+            </li>
+            <li><a href="/board/?id=faq" designelement="text" textindex="9"
+                   texttemplatepath="cmVzcG9uc2l2ZV92ZXIxX2RlZmF1bHRfZ2xfMS9fbW9kdWxlcy9jb21tb24vbGF5b3V0X3NpZGUuaHRtbA==">자주묻는질문</a>
+            </li>
+            <li><a href="/board/?id=goods_qna" designelement="text" textindex="10"
+                   texttemplatepath="cmVzcG9uc2l2ZV92ZXIxX2RlZmF1bHRfZ2xfMS9fbW9kdWxlcy9jb21tb24vbGF5b3V0X3NpZGUuaHRtbA==">상품문의</a>
+            </li>
+            <li><a href="/board/?id=goods_review" designelement="text" textindex="11"
+                   texttemplatepath="cmVzcG9uc2l2ZV92ZXIxX2RlZmF1bHRfZ2xfMS9fbW9kdWxlcy9jb21tb24vbGF5b3V0X3NpZGUuaHRtbA==">상품후기</a>
+            </li>
+            <li><a href="./member/bulkbuy.html" designelement="text" textindex="12"
+                   texttemplatepath="cmVzcG9uc2l2ZV92ZXIxX2RlZmF1bHRfZ2xfMS9fbW9kdWxlcy9jb21tb24vbGF5b3V0X3NpZGUuaHRtbA==">대량구매</a>
+            </li>
+        </ul>
+        <!-- ++++++++ //커뮤니티 ++++++++ -->
+    </div>
+
+    <div class="aside_menu3">
+        <ul>
+            <li><a href="./promotion/as3year.html">최대 무상 3년 A/S 서비스</a></li>
+            <li><a href="./goods/brand_main.html">BRAND</a></li>
+            <li><a href="./service/location.html">매장찾기</a></li>
+            <!--li><a href="./goods/catalog9335.html">리퍼마켓</a></li-->
+        </ul>
+    </div>
+    <div class="aside_menu2">
+        <ul>
+            <li><a href="./promotion/event.html">EVENT</a></li>
+            <li><a href="./member/bulkbuy.html">대량구매</a></li>
+        </ul>
+    </div>
+
+    <div class="swiper-container aside_banner swiper-container-horizontal">
+        <div class="swiper-wrapper">
+        </div>
+        <div class="swiper-pagination swiper-pagination-bullets"><span
+                class="swiper-pagination-bullet swiper-pagination-bullet-active"></span></div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    </div>
+
+
+
+
+
+    <div class="wrap_aside v2" style="display:none;">
+        <select class="Wmax" onchange="location.href=this.value;">
+            <option value="http://duoback.co.kr" selected="">KR</option>
+        </select>
+    </div>
+
+    <!-- 얼럿창 -->
+    <div id="category_favorite_alert" class="category_favorite_alert">
+        <div class="cfa_on"></div>
+        <div class="cfa_off"></div>
+        <div class="cfa_msg"></div>
+    </div>
+    <div class="aside_edit">
+        <ul class="ab_clear">
+            <li><a href="./service/cs.html" class="btn_cscenter">고객센터</a></li>
+            <li><a href="javascript:alert('설정');" class="btn_edit">설정</a></li>
+            <li>
+                <a href="./member/login.html" class="btn_login">로그인</a>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+</div>
+<!-- ================= 어사이드 :: END. 파일위치 : _modules/common/layout_side.html (비동기 로드) ================= -->
+<a href="javascript:side_menu_onoff();" id="side_close" class="side_close">어사이드 닫기</a>
+
+</div>

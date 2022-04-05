@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="bottom_area" class="bottom_area">
+    <div id="mobileZipcodeLayer" style="display: none"></div>
+    <!-- 결제창을 레이어 형태로 구현-->
+    <div id="layer_pay" class="hide"></div>
+    <div id="payprocessing" class="pay_layer hide">
+        <div style="margin:auto;"><img
+                src="data/skin/responsive_ver1_default_gl_1/images/design/img_paying.gif" />
+        </div>
+        <div style="margin:auto;padding-top:20px;"><img
+                src="data/skin/responsive_ver1_default_gl_1/images/design/progress_bar.gif" /></div>
+    </div>
+    <div id="layout_side_background" class="layout_side_background"></div>
+
+    <!-- ================= #HTML_FOOTER :: START. 파일위치 : _modules/common/html_footer.html ================= -->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++
+@@ #HTML_FOOTER @@
+- 파일위치 : [스킨폴더]/_modules/common/html_footer.html
+++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <div id="popupChangePassword" class="resp_layer_pop hide">
+        <h4 class="title">비밀번호 변경</h4>
+        <form id='passUpdateForm' method='post'
+              action='https://www.duoback.co.kr/login_process/popup_change_pass' target='actionFrame'>
+            <input type='hidden' name='password_mode' value='update'>
+            <div class="y_scroll_auto2">
+                <div class="layer_pop_contents v5">
+                    <h5 class="stitle">회원님의 소중한 개인정보 보호를 위해 비밀번호를 주기적으로 변경하시는 것이 좋습니다.</h5>
+                    <p class="desc Pb8">※ 비밀번호는 6~20자, 영문 대소문자 또는 숫자 특수문자 중 2가지 이상 조합.</p>
+                    <div class="resp_table_row input_form th_size3">
+                        <ul class="tr">
+                            <li class="th Pl5 Pr5">현재 비밀번호</li>
+                            <li class="td">
+                                <input type='password' name='old_password' value=''
+                                       class='passwordField eng_only Wmax' />
+                            </li>
+                        </ul>
+                        <ul class="tr">
+                            <li class="th Pl5 Pr5">신규 비밀번호</li>
+                            <li class="td">
+                                <input type='password' name='new_password' value=''
+                                       class='passwordField eng_only Wmax' />
+                            </li>
+                        </ul>
+                        <ul class="tr">
+                            <li class="th Pl5 Pr5">신규 비밀번호 <span class="Dib">확인</span></li>
+                            <li class="td">
+                                <input type='password' name='re_new_password' value=''
+                                       class='passwordField eng_only Wmax' />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="C Pt20 Fs15">
+                        <label><input type='checkbox' name='update_rate' value='Y'
+                                      onclick='update_rate_checked();'> 개월
+                            이후에 비밀번호를 변경하겠습니다.</label>
+                    </div>
+                </div>
+            </div>
+            <div class="layer_bottom_btn_area2 v2">
+                <ul class="basic_btn_area2">
+                    <li><button type="submit" class="btn_resp size_c color2">변경 완료</button></li>
+                    <li><button type="button" class="btn_resp size_c color5"
+                                onclick="hideCenterLayer()">취소</button>
+                    </li>
+                </ul>
+            </div>
+            <a href="./mypage/mypage_zzim.html" class="btn_pop_close" onclick="hideCenterLayer()"></a>
+        </form>
+    </div>
+    <script type="text/javascript" src="/wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">
+        // STEP 2. na_account_id(네이버공통키) 세팅
+        if (!wcs_add) var wcs_add = {};
+        wcs_add["wa"] = "s_379a6b8575dd"; // wcs_add["wa"]="na_account_id" , 확인된/전달받은 na_account_id(네이버공통키) 세팅
+        //STEP 3. Referrer, 현재 페이지 URL, 사용자 환경 등의 정보를 변수에 세팅 및 전환로그 수집을 위한 Cookie등의 세팅
+        if (!_nasa) var _nasa = {};
+        wcs.inflow("duoback.co.kr"); // PC사이트와 모바일사이트의 웹로그 합하여 분석하는 경우 사이트 최상위 도메인 입력. PC와 모바일
+        //사이트를 각각 별도로 분석하고 싶은 경우 값을 비워둠.
+        if (window.location.pathname == '/member/register_ok') {
+            _nasa["cnv"] = wcs.cnv("2", "1");
+        }
+
+        if (window.location.pathname == '/order/cart') {
+            _nasa["cnv"] = wcs.cnv("3", find_cart_price);
+        }
+
+        if (window.location.pathname == '/order/complete') {
+            _nasa["cnv"] = wcs.cnv("1", settleprice);
+        }
+
+        // STEP 4. 변수에 세팅된 각종 정보 + 전환정보를 (네이버의) 웹로그수집서버에 전송. 전송하는 method이므로 항상 STEP 1, 2, 3 보다
+        //나중에 있어야 함. (변수 세팅 등이 되지 않은 상황에서 먼저 전송하면 웹로그 수집에 오류가 발생함.)
+        wcs_do(_nasa);
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".resp_top_hamburger").click(function () {
+                $("#layout_side").css("display", "block")
+                $("#layout_side").css("left", "0");
+                $("#side_close").addClass("on");
+            })
+        })
+
+        $(document).ready(function () {
+            $(".mb_cate").click(function () {
+                $("#layout_side").css("display", "block")
+                $("#layout_side").css("left", "0");
+                $("#side_close").addClass("on");
+            })
+        })
+
+    </script>
+</div>
+</html>
+
+

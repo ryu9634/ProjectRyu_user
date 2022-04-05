@@ -1,0 +1,1166 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="fragment-top_area">
+    <!-- ================= #LAYOUT_HEADER :: START. 파일위치 : layout_header/standard.html (default) ================= -->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++
+    @@ #LAYOUT_HEADER_new @@
+    - 파일위치 : [스킨폴더]/layout_header/standard.html
+    - 오리지널 파일위치 : [스킨폴더]/layout_header/standard_ori.html
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+    <div id="layout_header" class="layout_header">
+        <div class="util_wrap">
+            <div class="resp_wrap">
+                <!-- logo -->
+                <h1 class="logo_area">
+                    <a href='duoback.html' target='_self' class="logo">
+                        <img src="data/skin/responsive_ver1_default_gl_1/images/design/logo1.svg" alt="(주) 듀오백"
+                             class="active" />
+                        <img src="data/skin/responsive_ver1_default_gl_1/images/design/logo2.svg"
+                             alt="(주) 듀오백" />
+                    </a>
+                </h1>
+                <script>
+                    setInterval(function () {
+                        // toggle the class every five second
+                        $(".layout_header .logo img").toggleClass("active");
+                        setTimeout(function () {
+                            // toggle back after 1 second
+                            $(".layout_header .logo img").toggleClass("active");
+                        }, 2000)
+                    }, 4000);
+                </script>
+                <!-- language -->
+                <div class="language hide">
+                    <a class="select_list" id="select_main" href="http://duoback.co.kr/">
+                        <span class='language_country_img language_country_img_KR'></span>
+                        Korea
+                        <span class="sel_arrow"></span>
+                    </a>
+                    <ul class="optionSub" style="position:relative;display:none;">
+                    </ul>
+                </div>
+
+                <!-- bookmark
+        <a class="bookmark" href="javascript:;"  onclick="bookmarksite('http://duoback.co.kr/duoback.html', '듀오백')" title="북마크"><img src="/data/skin/responsive_ver1_default_gl_1/images/common/icon_bookmark.png" alt="bookmark" /> <span designElement="text">BOOKMARK</span></a>-->
+
+                <!-- +++++++++++++++++++++++++ 검색 리뉴얼 +++++++++++++++++++++++++++++ -->
+                <div id="searchModule" class="resp_top_search">
+                    <a href="./mypage/mypage_zzim.html" id="btnSearchV2" class="btn_search_open"
+                       style="display:none;">검색</a>
+                    <div id="searchVer2" class="search_ver2 on" style="display:block !important;">
+                        <div class="search_new">
+                            <!-- ------- 검색 입력 ------- -->
+                            <form name="topSearchForm" id="topSearchForm"
+                                  action="https://www.duoback.co.kr/goods/search">
+                                <div class="input_area">
+                                    <div class="cont">
+                                        <label class="search_box"><input type="text" name="search_text"
+                                                                         id="searchVer2InputBox" class="search_ver2_input_box"
+                                                                         placeholder="검색어를 입력해주세요." autocomplete="off" /></label>
+                                        <button type="submit" class="search"></button>
+                                        <button type="button" class="close searchModuleClose"></button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- ------- 페이지별 기본 검색 ------- -->
+                            <script type="text/javascript">
+                                $("form#topSearchForm input[name='search_text']").attr('placeholder', '2022 듀오백몰 새학기 할인 혜택 구경하기');
+                                $("form#topSearchForm").submit(function (event) {
+                                    if (!$("form#topSearchForm input[name='search_text']").val()) {
+                                        document.location.href = "promotion/event_detaile5e3.html?parent=770";
+                                        return false;
+                                    }
+                                });
+                            </script>
+                            <!-- ------- //검색 입력 ------- -->
+                            <div class="contetns_area" style="display:none;">
+                                <!-- ------- 최근 검색어, 최근본 상품 ------- -->
+                                <div id="recentArea" class="recent_area">
+                                    <ul class="tab_btns">
+                                        <li class="on"><a href="#recent-searched-list">최근 검색어</a></li>
+                                        <li><a href="#recent-item-list">최근본 상품</a></li>
+                                    </ul>
+                                    <!-- 최근 검색어 -->
+                                    <div id="recent-searched-list" class="tab_contents">
+                                        <ul id="recentSearchedList" class="searching_list">
+                                            <li class="recent_search_item">
+                                                <a class="searched_item"
+                                                   href="./mypage/mypage_zzim.html">듀오백d3</a>
+                                                <a class="searching_item_close" href="./mypage/mypage_zzim.html"
+                                                   data-value="78449" onclick="searchRecentRemove(this)"
+                                                   title="삭제">삭제</a>
+                                            </li>
+                                            <li class="recent_search_item">
+                                                <a class="searched_item" href="./mypage/mypage_zzim.html">의자</a>
+                                                <a class="searching_item_close" href="./mypage/mypage_zzim.html"
+                                                   data-value="73905" onclick="searchRecentRemove(this)"
+                                                   title="삭제">삭제</a>
+                                            </li>
+                                            <!-- <li class="recent_search_item popular_search_item">
+                                        <a class="searched_item" href="./mypage/mypage_zzim.html">d3</a>
+                                    </li> -->
+                                            <!-- <li class="recent_search_item popular_search_item">
+                                        <a class="searched_item" href="./mypage/mypage_zzim.html">q7</a>
+                                    </li> -->
+                                            <!-- <li class="recent_search_item popular_search_item">
+                                        <a class="searched_item" href="./mypage/mypage_zzim.html">q1</a>
+                                    </li> -->
+                                            <!-- <li class="recent_search_item popular_search_item">
+                                        <a class="searched_item" href="./mypage/mypage_zzim.html">브라보</a>
+                                    </li> -->
+                                            <!-- <li class="recent_search_item popular_search_item">
+                                        <a class="searched_item" href="./mypage/mypage_zzim.html">Dk2500</a>
+                                    </li> -->
+                                            <li class="no_data">최근검색어가 없습니다.</li>
+                                        </ul>
+                                        <div id="recentSearchedGuide" class="no_data" style="display:none;">최근
+                                            검색어 저장 기능이 꺼져있습니다.</div>
+                                        <ul class="tab_foot_menu">
+                                            <li class="menu_item">
+                                                <a href="./mypage/mypage_zzim.html" data-value="all"
+                                                   onclick="searchRecentRemove(this)">전체삭제</a>
+                                                <a class="btnRecentAuto off"
+                                                   href="./mypage/mypage_zzim.html">자동저장
+                                                    끄기</a>
+                                                <a class="btnRecentAuto on" href="./mypage/mypage_zzim.html"
+                                                   style="display:none;">자동저장 <span
+                                                        class="importcolor">켜기</span></a>
+                                            </li>
+                                            <li class="search_close searchModuleClose"><a
+                                                    href="./mypage/mypage_zzim.html">닫기</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- //최근 검색어 -->
+                                    <!-- 최근본 상품 -->
+                                    <div id="recent-item-list" class="tab_contents" style="display:none;">
+                                        <ul class="recent_item_list">
+                                            <li class="no_data" style="display:block;">최근본 상품이 없습니다.</li>
+                                        </ul>
+                                        <ul class="tab_foot_menu">
+                                            <li class="swiper_guide">
+                                                <span class="to_left">&lt;</span>
+                                                <span class="to_right">&gt;</span>
+                                            </li>
+                                            <li class="search_close searchModuleClose"><a
+                                                    href="./mypage/mypage_zzim.html">닫기</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- //최근본 상품 -->
+                                </div>
+                                <!-- ------- //최근 검색어, 최근본 상품 ------- -->
+
+                                <!-- ------- 검색어 자동완성 ------- -->
+                                <div id="autoCompleteArea" class="autocomplete_area" style="display:none;">
+
+                                    <!-- 검색어 자동완성 - 검색어 -->
+                                    <div class="autocomplete_searching">
+                                        <ul id="autoCompleteList" class="searching_list">
+                                        </ul>
+
+                                        <div id="autoCompleteGuide" class="no_data" style="display:none;">자동완성
+                                            기능이 꺼져있습니다</div>
+
+                                        <ul class="tab_foot_menu">
+                                            <li class="menu_item">
+                                                <a class="btnAutoComplete off"
+                                                   href="./mypage/mypage_zzim.html">자동완성
+                                                    끄기</a>
+                                                <a class="btnAutoComplete on" href="./mypage/mypage_zzim.html"
+                                                   style="display:none;">자동완성 <span
+                                                        class="importcolor">켜기</span></a>
+                                            </li>
+                                            <li class="search_close searchModuleClose"><a
+                                                    href="./mypage/mypage_zzim.html">닫기</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- //검색어 자동완성 - 검색어 -->
+
+                                    <!-- 검색어 자동완성 - 배너( 추천상품 ) -->
+                                    <div id="autoCompleteBanner" class="autocomplete_banner">
+                                        <h5 class="title">추천 상품</h5>
+                                        <ul id="autocompleteBannerList" class="banner_list">
+                                        </ul>
+                                    </div>
+                                    <!-- //검색어 자동완성 - 배너( 추천상품 ) -->
+                                </div>
+                                <!-- ------- //검색어 자동완성 ------- -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- +++++++++++++++++++++++++ //검색 리뉴얼 +++++++++++++++++++++++++++++ -->
+
+                <ul class="util_wrap_menu2">
+                    <li><a href="member/login.html" designElement="text" textIndex="5"
+                           textTemplatePath="cmVzcG9uc2l2ZV92ZXIxX2RlZmF1bHRfZ2xfMS9sYXlvdXRfaGVhZGVyL3N0YW5kYXJkLmh0bWw=">로그인</a>
+                    </li>
+                    <li>
+                        <a href="member/agreement.html" designElement="text" textIndex="6"
+                           textTemplatePath="cmVzcG9uc2l2ZV92ZXIxX2RlZmF1bHRfZ2xfMS9sYXlvdXRfaGVhZGVyL3N0YW5kYXJkLmh0bWw=">회원가입</a>
+                        <div class="benefit">
+                            <span class="arrow">▲</span>
+                            + 2,000
+                        </div>
+                    </li>
+                    <li><a href="/ProjectRyu/www.duoback.co.kr/mypage/mypage_zzim.html">찜 리스트</a></li>
+                    <li class="respCartArea"><a href="order/cart.html"><span designElement="text" textIndex="7"
+                                                                             textTemplatePath="cmVzcG9uc2l2ZV92ZXIxX2RlZmF1bHRfZ2xfMS9sYXlvdXRfaGVhZGVyL3N0YW5kYXJkLmh0bWw=">장바구니</span><span
+                            class="cart_cnt1">0</span></a></li>
+
+                    <li><a href="mypage/mypage_order.html" designElement="text" textIndex="8"
+                           textTemplatePath="cmVzcG9uc2l2ZV92ZXIxX2RlZmF1bHRfZ2xfMS9sYXlvdXRfaGVhZGVyL3N0YW5kYXJkLmh0bWw=">마이페이지</a>
+                    </li>
+                    <li><a href="service/cs8998.html?designMode=1" designElement="text" textIndex="9"
+                           textTemplatePath="cmVzcG9uc2l2ZV92ZXIxX2RlZmF1bHRfZ2xfMS9sYXlvdXRfaGVhZGVyL3N0YW5kYXJkLmh0bWw=">고객센터</a>
+                    </li>
+                    <!--li><a href="/mypage/order_catalog" designElement="text">ORDER</a></li-->
+                    <!--li><a href="/service/cs" designElement="text">CS CENTER</a></li-->
+                </ul>
+            </div>
+        </div>
+
+        <div class="logo_wrap">
+            <div class="resp_wrap">
+                <a href="duoback.html" target="_self" class="logo">
+                    <img src="data/skin/responsive_ver1_default_gl_1/images/design/logo_m1.svg" alt="(주) 듀오백"
+                         class="active" />
+                    <img src="data/skin/responsive_ver1_default_gl_1/images/design/logo_m2.svg" alt="(주) 듀오백" />
+                </a>
+                <!-- 햄버거 버튼 -->
+                <div class="resp_top_hamburger">
+                    <a href="javascript:;"><b>aside menu</b></a>
+                </div>
+                <!-- 검색 버튼 -->
+                <a href="#none" class="btn_mo btn_search">검색</a>
+                <div class="mo_search_area">
+                    <input type="text" placeholder="검색어를 입력해주세요." class="mo_search_text"
+                           onkeyup="enterkey();" />
+                    <input type="button" value="검색" class="btn_mo_search"
+                           onclick="document.location.href = '/goods/search?search_text=' + $('.mo_search_text').val();" />
+                    <button type="button" class="search_close">닫기</button>
+                </div>
+                <script>
+                    $("")
+                    $(".btn_search.btn_mo").click(function () {
+                        $(this).toggleClass("active");
+                        $(".layout_header").toggleClass("search_mode");
+                    });
+                    $(".mo_search_area .search_close").click(function () {
+                        $(this).parent().siblings(".btn_search.btn_mo").toggleClass("active");
+                        $(".layout_header").toggleClass("search_mode");
+                        $(".search_new .contetns_area").hide();
+                    });
+                    function enterkey() {
+                        if (window.event.keyCode == 13) {
+                            document.location.href = '/goods/search?search_text=' + $('.mo_search_text').val();
+                        }
+                    }
+                    $("#recentArea ul.tab_btns li:first-child").click(function () {
+                        $("#recent-searched-list").css("display", "block");
+                        $("#recent-item-list").css("display", "none");
+                        if ($("#recentArea ul li:last-child").hasClass("on")) {
+                            $(this).toggleClass("on");
+                            $(this).siblings("li").toggleClass("on");
+                        }
+
+                    })
+                    $("#recentArea ul.tab_btns li:last-child").click(function () {
+                        $("#recent-item-list").css("display", "block");
+                        $("#recent-searched-list").css("display", "none");
+                        $(this).toggleClass("on");
+                        $(this).siblings("li").toggleClass("on");
+                    })
+                    $(".search_box").click(function () {
+                        $(".contetns_area").css("display", "block");
+                        $("#recentArea ul li:first-child").addClass("on");
+                        if ($("#recentArea ul li:last-child").hasClass("on")) {
+                            $("#recentArea ul li:last-child").removeClass("on");
+                        }
+                    })
+
+                    $(".search_close").click(function () {
+                        $(".contetns_area").css("display", "none");
+                        if ($("#recentArea ul li:last-child").hasClass("on")) {
+                            $("#recentArea ul li:last-child").toggleClass("on");
+                            $("#recent-searched-list").css("display", "block");
+                            $("#recent-item-list").css("display", "none");
+                        } else if ($("#recentArea ul li:first-child").hasClass("on")) {
+                            $("#recentArea ul li:last-child").removeClass("on");
+
+                        }
+                    });
+
+                    $(".searching_item_close").click(function () {
+                        $(this).parent("li.recent_search_item").remove();
+                    })
+
+                    $("li.menu_item:first-child").click(function () {
+                        $(".searching_item_close").parent("li.recent_search_item").remove();
+                    })
+                    $(".btnRecentAuto.off").click(function () {
+                        $(".btnRecentAuto.off").css("display", "none");
+                        $(".btnRecentAuto.on").css("display", "block");
+                        $("#recentSearchedList").css("display", "none")
+                        $("#recentSearchedGuide").css("display", "block")
+                    })
+                    $(".btnRecentAuto.on").click(function () {
+                        $(".btnRecentAuto.off").css("display", "block");
+                        $(".btnRecentAuto.on").css("display", "none");
+                        $("#recentSearchedList").css("display", "block")
+                        $("#recentSearchedGuide").css("display", "none")
+                    })
+
+
+                </script>
+                <!-- 장바구니( 1023px 이하에서 노출됨 ) -->
+                <a href="order/cart.html" class="resp_top_cart"><span class="cart_cnt2">0</span></a>
+            </div>
+        </div>
+
+
+        <!-- +++++++++++ 카테고리 메뉴( 카테고리 메뉴를 미노출 하실 분은 style="display:none;" 처리 하세요. ex) id="cateSwiper" class="nav_wrap" style="display:none;" ) +++++++++++ -->
+        <div id="cateSwiper" class="nav_wrap duo_category">
+            <div class="resp_wrap">
+                <div class="nav_category_area">
+                    <div class="designCategoryNavigation">
+                        <ul class="respCategoryList">
+                            <li class="nav_category_all">
+                                <!-- 전체 카테고리 버튼 class 네임 : 'categoryAllBtn', 전체 브랜드 : 'brandAllBtn', 전체 지역 : 'locationAllBtn' -->
+                                <!-- 전체 카테고리 로딩 파일위치 : [스킨폴더]/_modules/category/all_navigation.html -->
+                                <a href="javascript:;" class="btn_all_cate"
+                                   title="전체 카테고리"><span><span></span></span>전체 카테고리</a>
+                                <ul class="gnb">
+                                    <!-- 카테고리 네비게이션. 파일위치 : [스킨폴더]/_modules/category/category_gnb.html -->
+                                    <!-- 참고) 브랜드: showBrandLightNavigation(), 지역: showLocationLightNavigation() -->
+                                    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++
+@@ 카테고리 네비게이션_new @@
+- 파일위치 : [스킨폴더]/_modules/category/category_gnb.html
+- 오리지널 파일위치 : [스킨폴더]/_modules/category/category_gnb.html
+- 현재 3뎁스까지 노출 가능
+++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                                    <style>
+                                        .subtitle {
+                                            font-size: 11px;
+                                            margin-top: 5px;
+                                        }
+
+                                        @media all and (max-width: 767px) {
+                                            .subtitle {
+                                                font-size: 10px;
+                                                margin-top: 0;
+                                                margin-bottom: 15px;
+                                            }
+                                        }
+                                    </style>
+
+                                    <li class="depth1">
+                                        <a href="goods/catalog5366.html?code=0002">
+                                            <div>앉는모든</div>
+                                        </a>
+                                        <ul>
+                                            <li class="depth2">
+                                                <a href="goods/catalog4c8e.html?code=00020001">서재|오피스</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalogc3b8.html?code=00020005">학생|스터디</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalogf103.html?code=00020002">유아|아동</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalog1bad.html?code=00020010">좌식|발받침</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalog5eef.html?code=00020007">게임</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalog4882.html?code=00020006">중역</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalogc5e2.html?code=00020009">인테리어</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalog0a76.html?code=00020011">소파|리클라이너</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalog05fe.html?code=00020012">야외|캠핑|낚시</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalogdfcb.html?code=00020013">의자 액세서리</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="depth1">
+                                        <a href="goods/catalogb0e9.html?code=0013">
+                                            <div>앉는공간</div>
+                                        </a>
+                                        <ul>
+                                            <li class="depth2">
+                                                <a href="goods/catalogbcc6.html?code=00130001">공부방</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalogc0d9.html?code=00130002">사무실</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalog8ba4.html?code=00130003">거실</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalog24cd.html?code=00130004">파우더룸</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalog6619.html?code=00130005">주방|식당</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalogdf7f.html?code=00130006">테라스|캠핑|낚시터</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="depth1">
+                                        <a href="goods/catalog762d.html?code=0001">
+                                            <div>DUOBACK</div>
+                                        </a>
+                                        <ul>
+                                            <li class="depth2">
+                                                <a href="goods/catalog6408.html?code=00010001">듀오백</a>
+                                                <ul>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalogadb4.html?code=000100010001">D
+                                                        Series</a></li>
+                                                    <li class="depth3"><a
+                                                            href="goods/cataloge840.html?code=000100010002">D2</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalogf51a.html?code=000100010003">D2A</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalogd906.html?code=000100010004">ALPHA</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalog86e5.html?code=000100010005">MILKY</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalogd588.html?code=00010002">싱글백</a>
+                                                <ul>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalog1c3a.html?code=000100020001">Q1</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalog6ac2.html?code=000100020002">Q2|Q3</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/cataloge4be.html?code=000100020004">Q5</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalog31d2.html?code=000100020022">Q6</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalog7c16.html?code=000100020005">Q7</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalogde94.html?code=000100020008">hybrid</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalogd192.html?code=000100020006">SQUARE</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalogcb7b.html?code=000100020018">LIMA</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalog532f.html?code=000100020011">JOY</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalog0b33.html?code=000100020021">D3</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalog8653.html?code=000100020010">BRAVO</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalogae80.html?code=000100020020">FOUNDER</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalogd8a0.html?code=000100020019">Rabbit</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalog9c66.html?code=00010003">키즈</a>
+                                                <ul>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalog9e0d.html?code=000100030001">MILKY</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalogddab.html?code=000100030002">Rabbit</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalog2c21.html?code=00010004">에어로</a>
+                                                <ul>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalog8e5e.html?code=000100040001">듀오백
+                                                        Airo</a></li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalog594a.html?code=000100040002">싱글백
+                                                        Airo</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalogfa43.html?code=00010009">게이밍 의자|책상</a>
+                                                <ul>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalog0fc9.html?code=000100090001">의자</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/cataloge126.html?code=000100090002">책상</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalog60ca.html?code=000100090003">액세서리</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalog1a98.html?code=000100090004">세트</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalog41df.html?code=00010005">자세알고</a>
+                                                <ul>
+                                                    <li class="depth3"><a
+                                                            href="goods/cataloga1ad.html?code=000100050001">성인용</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalogca04.html?code=000100050002">아동용</a>
+                                                    </li>
+                                                    <li class="depth3"><a
+                                                            href="goods/catalog5aa5.html?code=000100050003">스마트
+                                                        좌판</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalog264c.html?code=00010008">발받침</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalog5ff1.html?code=00010010">커버</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalog6328.html?code=00010011">번개배송</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalog4c97.html?code=00010012">1+1 패키지</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="depth1">
+                                        <a href="goods/catalog117e.html?code=0010">
+                                            <div>바인츠</div>
+                                            <div class="subtitle">인테리어의자</div>
+                                        </a>
+                                    </li>
+
+                                    <li class="depth1">
+                                        <a href="goods/catalog3bca.html?code=0011">
+                                            <div>라이트오피스</div>
+                                            <div class="subtitle">홈오피스가구</div>
+                                        </a>
+                                        <ul>
+                                            <li class="depth2">
+                                                <a href="goods/cataloge049.html?code=00110001">책상</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalog9e82.html?code=00110002">책장</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="depth1">
+                                        <a href="goods/brand_main.html">브랜드</a>
+                                        <ul class="brand">
+                                            <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++
+@@ 브랜드 네비게이션 @@
+- 파일위치 : [스킨폴더]/_modules/brand/brand_gnb.html
+- 현재 2뎁스까지 노출 가능( 3뎁스 이하 노출은 스킨제작자 매뉴얼 참고 )
+++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                                            <li class="categoryDepth1">
+
+                                                <a class="categoryDepthLink"
+                                                   href="goods/brand33b6.html?code=0012">
+                                                    <div class="brand_image">
+                                                        <img src="data/brand/0012_icon_1622103595.png"
+                                                             onerror="this.src='data/skin/responsive_ver1_default_gl_1/images/common/noimage_list.gif'" />
+                                                    </div>
+                                                    <p>듀오백</p>
+                                                </a>
+                                            </li>
+                                            <li class="categoryDepth1">
+
+                                                <a class="categoryDepthLink"
+                                                   href="goods/brand40e0.html?code=0009">
+                                                    <div class="brand_image">
+                                                        <img src="data/brand/0009_icon_1626772039.png"
+                                                             onerror="this.src='data/skin/responsive_ver1_default_gl_1/images/common/noimage_list.gif'" />
+                                                    </div>
+                                                    <p>바인츠</p>
+                                                </a>
+                                            </li>
+                                            <li class="categoryDepth1">
+
+                                                <a class="categoryDepthLink"
+                                                   href="goods/brand1741.html?code=0006">
+                                                    <div class="brand_image">
+                                                        <img src="data/brand/0006_icon_1626758276.png"
+                                                             onerror="this.src='data/skin/responsive_ver1_default_gl_1/images/common/noimage_list.gif'" />
+                                                    </div>
+                                                    <p>라이트오피스</p>
+                                                </a>
+                                            </li>
+                                            <li class="categoryDepth1">
+
+                                                <a class="categoryDepthLink"
+                                                   href="goods/brand617e.html?code=0004">
+                                                    <div class="brand_image">
+                                                        <img src="data/brand/0004_icon_1615482901.png"
+                                                             onerror="this.src='data/skin/responsive_ver1_default_gl_1/images/common/noimage_list.gif'" />
+                                                    </div>
+                                                    <p>미요</p>
+                                                </a>
+                                            </li>
+                                            <li class="categoryDepth1">
+
+                                                <a class="categoryDepthLink"
+                                                   href="goods/brand100e.html?code=0017">
+                                                    <div class="brand_image">
+                                                        <img src="data/brand/0017_icon_1627605902.jpg"
+                                                             onerror="this.src='data/skin/responsive_ver1_default_gl_1/images/common/noimage_list.gif'" />
+                                                    </div>
+                                                    <p>퍼스널</p>
+                                                </a>
+                                            </li>
+                                            <li class="categoryDepth1">
+
+                                                <a class="categoryDepthLink"
+                                                   href="goods/brand5366.html?code=0002">
+                                                    <div class="brand_image">
+                                                        <img src="data/brand/0002_icon_1623981385.png"
+                                                             onerror="this.src='data/skin/responsive_ver1_default_gl_1/images/common/noimage_list.gif'" />
+                                                    </div>
+                                                    <p>비플러스</p>
+                                                </a>
+                                            </li>
+                                            <li class="categoryDepth1">
+
+                                                <a class="categoryDepthLink"
+                                                   href="goods/brande7ff.html?code=0003">
+                                                    <div class="brand_image">
+                                                        <img src="data/brand/0003_icon_1615483160.png"
+                                                             onerror="this.src='data/skin/responsive_ver1_default_gl_1/images/common/noimage_list.gif'" />
+                                                    </div>
+                                                    <p>브로스앤컴퍼니</p>
+                                                </a>
+                                            </li>
+                                            <li class="categoryDepth1">
+
+                                                <a class="categoryDepthLink"
+                                                   href="goods/brand0187.html?code=0005">
+                                                    <div class="brand_image">
+                                                        <img src="data/brand/0005_icon_1626328926.png"
+                                                             onerror="this.src='data/skin/responsive_ver1_default_gl_1/images/common/noimage_list.gif'" />
+                                                    </div>
+                                                    <p>바튼</p>
+                                                </a>
+                                            </li>
+                                            <li class="categoryDepth1">
+
+                                                <a class="categoryDepthLink"
+                                                   href="goods/brand483b.html?code=0007">
+                                                    <div class="brand_image">
+                                                        <img src="data/brand/0007_icon_1626164220.png"
+                                                             onerror="this.src='data/skin/responsive_ver1_default_gl_1/images/common/noimage_list.gif'" />
+                                                    </div>
+                                                    <p>베네폼</p>
+                                                </a>
+                                            </li>
+                                            <li class="categoryDepth1">
+
+                                                <a class="categoryDepthLink"
+                                                   href="goods/brand117e.html?code=0010">
+                                                    <div class="brand_image">
+                                                        <img src="data/brand/0010_icon_1615483398.png"
+                                                             onerror="this.src='data/skin/responsive_ver1_default_gl_1/images/common/noimage_list.gif'" />
+                                                    </div>
+                                                    <p>에이블루</p>
+                                                </a>
+                                            </li>
+                                            <li class="categoryDepth1">
+
+                                                <a class="categoryDepthLink"
+                                                   href="goods/brand3bca.html?code=0011">
+                                                    <div class="brand_image">
+                                                        <img src="data/brand/0011_icon_1627605909.png"
+                                                             onerror="this.src='data/skin/responsive_ver1_default_gl_1/images/common/noimage_list.gif'" />
+                                                    </div>
+                                                    <p>발란스코드</p>
+                                                </a>
+                                            </li>
+                                            <li class="categoryDepth1">
+
+                                                <a class="categoryDepthLink"
+                                                   href="goods/brandb0e9.html?code=0013">
+                                                    <div class="brand_image">
+                                                        <img src="data/brand/0013_icon_1626164997.png"
+                                                             onerror="this.src='data/skin/responsive_ver1_default_gl_1/images/common/noimage_list.gif'" />
+                                                    </div>
+                                                    <p>에어셀</p>
+                                                </a>
+                                            </li>
+                                            <li class="categoryDepth1">
+
+                                                <a class="categoryDepthLink"
+                                                   href="goods/brand78d0.html?code=0014">
+                                                    <div class="brand_image">
+                                                        <img src="data/brand/0014_icon_1626759383.png"
+                                                             onerror="this.src='data/skin/responsive_ver1_default_gl_1/images/common/noimage_list.gif'" />
+                                                    </div>
+                                                    <p>딘</p>
+                                                </a>
+                                            </li>
+                                            <li class="categoryDepth1">
+
+                                                <a class="categoryDepthLink"
+                                                   href="goods/brand252e.html?code=0015">
+                                                    <div class="brand_image">
+                                                        <img src="data/brand/0015_icon_1626759397.png"
+                                                             onerror="this.src='data/skin/responsive_ver1_default_gl_1/images/common/noimage_list.gif'" />
+                                                    </div>
+                                                    <p>우리하루</p>
+                                                </a>
+                                            </li>
+                                            <li class="categoryDepth1">
+
+                                                <a class="categoryDepthLink"
+                                                   href="goods/brandac3f.html?code=0016">
+                                                    <div class="brand_image">
+                                                        <img src="data/brand/0016_icon_1626759408.png"
+                                                             onerror="this.src='data/skin/responsive_ver1_default_gl_1/images/common/noimage_list.gif'" />
+                                                    </div>
+                                                    <p>아이클</p>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+
+                                    <li class="depth1">
+                                        <a href="goods/catalog483b.html?code=0007">
+                                            <div>데스크테리어</div>
+                                        </a>
+                                        <ul>
+                                            <li class="depth2">
+                                                <a href="goods/catalogdff3.html?code=00070004">책상|테이블|책장</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalog496c.html?code=00070005">방석|쿠션</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalogaf82.html?code=00070007">조명|스탠드</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="goods/catalogdc94.html?code=00070008">데스크소품</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="depth1">
+                                        <a href="goods/catalog617e.html">
+                                            <div>셀프A/S</div>
+                                        </a>
+                                        <ul>
+                                            <li class="depth2">
+                                                <a href="./goods/catalogc8c9.html">목받침</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="./goods/catalog68cf.html">등판</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="./.goods/catalog883d.html">팔걸이</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="./goods/catalogc728.html">좌판</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="./goods/catalogd886.html">베이스(6발|5발)</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="./goods/cataloga525.html">바퀴</a>
+                                            </li>
+                                            <li class="depth2">
+                                                <a href="./goods/catalog7bbb.html">ETC</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="depth1" style="display:none;">
+                                        <a href="page/index1f9e.html?tpl=service%2Flocation.html">매장찾기</a>
+                                    </li>
+                                    <li class="depth1">
+                                        <a href="goods/catalog9335.html?category=c0008">리퍼마켓</a>
+                                    </li>
+                                    <li class="depth1">
+                                        <a href="goods/catalog33b6.html">D포인트존</a>
+                                    </li>
+
+                                    <style media="screen">
+                                        .layout_header .nav_wrap.duo_category .respCategoryList>li .gnb li ul.brand {
+                                            height: calc(100% - 20px);
+                                            overflow: auto;
+                                            width: 360px;
+                                            padding: 10px 15px;
+                                        }
+
+                                        ul.brand li.categoryDepth1 {
+                                            float: left;
+                                            width: 120px;
+                                            padding: 0;
+                                            height: 100px;
+                                        }
+
+                                        .layout_header .nav_wrap.duo_category .respCategoryList>li .gnb li ul.brand li a {
+                                            padding: 0;
+                                            text-align: center;
+                                        }
+
+                                        .layout_header .nav_wrap.duo_category .respCategoryList>li .gnb li ul.brand li a:hover {
+                                            color: #00a79d !important;
+                                        }
+
+                                        .categoryDepthLink .brand_image {
+                                            height: 60px;
+                                            width: 100px;
+                                            overflow: hidden;
+                                            display: inline-block;
+                                            border: 1px solid #DDD;
+                                            border-radius: 10px;
+                                            margin-bottom: 5px;
+                                        }
+
+                                        .categoryDepthLink .brand_image img {
+                                            object-fit: contain;
+                                            width: 100%;
+                                            height: 100%;
+                                        }
+                                    </style>
+                                    <!-- //카테고리 네비게이션 -->
+                                </ul>
+                            </li>
+                            <li class="custom_nav_link"><a href="promotion/as3year.html">최대 무상 3년 A/S</a></li>
+                            <li class="custom_nav_link"><a href="goods/brand_main.html">BRAND</a></li>
+                            <li class="custom_nav_link"><a href="promotion/event.html">EVENT</a></li>
+                            <li class="custom_nav_link"><a href="goods/catalog617e.html?code=0004">셀프 A/S</a>
+                            </li>
+                            <li class="custom_nav_link ab_type02"><a
+                                    href="goods/catalog9335.html?category=c0008">리퍼마켓</a></li>
+                            <li class="custom_nav_link ab_type02"><a href="./member/bulkbuy.html">대량구매</a></li>
+                            <li class="custom_nav_link ab_type02 ab_fjrst"><a
+                                    href="service/location.html">매장안내</a></li>
+                            <li class="custom_nav_link ab_type02 ab_fjrst"><a href="./goods/catalog33b6.html">D
+                                포인트존</a></li>
+                            <!-- <li class="custom_nav_link ab_type02"><a href="/goods/catalog9335.html">리퍼마켓</a></li> -->
+
+                            <!-- <li class="custom_nav_link ab_type02"><a href="/page/index?tpl=mshop%2Fdpointzone.html">D포인트존</a></li> -->
+                            <!--li class="custom_nav_link ab_type02"><a href="/goods/catalog?category=c0012">D포인트존</a></li>D:20210623 오픈후활성화 -->
+                        </ul>
+                    </div>
+                    <a href="javascript:;" class="btn_gnb_more">더보기</a>
+                    <ul class="gnb_more">
+                        <li><a href="promotion/as3year.html">최대 무상 <span>3년 A/S</span></a></li>
+                        <li><a href="goods/brand_main.html">BRAND</a></li>
+                        <li><a href="promotion/event.html">EVENT</a></li>
+                        <li><a href="goods/catalog617e.html?code=0004">셀프 A/S</a></li>
+                        <li><a href="goods/catalog9335.html?category=c0008">리퍼마켓</a></li>
+                        <li><a href="./member/bulkbuy.html">대량구매</a></li>
+                        <li><a href="service/location.html">매장안내</a></li>
+                        <!-- <li><a href="/goods/catalog9335.html">리퍼마켓</a></li> -->
+                        <!-- <li><a href="/page/index?tpl=mshop%2Fdpointzone.html">D포인트존</a></li> -->
+
+                        <!--li><a href="/goods/catalog?category=c0009">D포인트존</a></li>D:20210623 오픈후활성화 -->
+                    </ul>
+                    <script>
+                        $(".nav_category_all .btn_all_cate").off("click").on("click", function () {
+                            $(this).toggleClass("on");
+                        });
+                        $(".btn_gnb_more").off("click").on("click", function () {
+                            $(this).toggleClass("on");
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="gnb_banner">
+                <a href="promotion/as3year.html"><img
+                        src="data/skin/responsive_ver1_default_gl_1/images/common/gnb_banner1.jpg"
+                        alt="듀오백약속 최대3년 as" /></a><a
+                    href="goods/catalogc1a2.html?page=1&amp;searchMode=catalog&amp;category=c00010011"><img
+                    src="data/skin/responsive_ver1_default_gl_1/images/common/gnb_banner2.jpg"
+                    alt="듀오백약속 번개배송 당일출고" /></a>
+            </div>
+        </div>
+        <!-- +++++++++++ //카테고리 메뉴 +++++++++++ -->
+
+        <!-- 카테고리 전체 네비게이션 팝업 START -->
+        <div id="categoryAll_wrap" class="categoryAll_wrap" style="display:none;">
+            <div class="categoryAllContainer">
+                <!-- 로딩 파일위치 : [스킨폴더]/_modules/category/all_navigation.html -->
+            </div>
+        </div>
+        <!-- 카테고리 전체 네비게이션 팝업 END -->
+
+        <!-- 브랜드 전체 네비게이션 팝업 START -->
+        <div id="brandAll_wrap" class="brandAll_wrap" style="display:none;">
+            <div class="brandAllContainer">
+                <!-- 로딩 파일위치 : [스킨폴더]/_modules/brand/all_navigation.html -->
+            </div>
+        </div>
+        <!-- 브랜드 전체 네비게이션 팝업 END -->
+
+        <!-- 지역 전체 네비게이션 팝업 START -->
+        <div id="locationAll_wrap" class="locationAll_wrap" style="display:none;">
+            <div class="locationAllContainer">
+                <!-- 로딩 파일위치 : [스킨폴더]/_modules/location/all_navigation.html -->
+            </div>
+        </div>
+        <!-- 지역 전체 네비게이션 팝업 END -->
+
+    </div>
+    <!-- 상단영역 : 끝 -->
+    <script type="text/javascript"
+            src="data/skin/responsive_ver1_default_gl_1/common/search_ver2_ready.js"></script>
+    <!-- 반응형 관련 프론트 js : 검색, 자동검색어 최근본상품 -->
+    <script type="text/javascript">
+        var resp_loc_top;
+        function flyingTitleBar() {
+            var resp_loc_top = $("#layout_header .logo_wrap").offset().top;
+            var head = $("#layout_header");
+            var obj = $("#layout_header .logo_wrap");
+            var obj_H = $("#layout_header .logo_wrap").outerHeight();
+            $(document).scroll(function () {
+                //alert( resp_loc_top );
+                if (($('.designPopupBand').is(':hidden') || $('.designPopupBand').length < 1) && window.innerWidth < 480) {
+                    if ($("#layout_header .util_wrap").is(':hidden')) {
+                        resp_loc_top = 0;
+                    } else {
+                        resp_loc_top = $("#layout_header .util_wrap").outerHeight(); // 띠배너 클로즈시 보정
+                    }
+                }
+                if (resp_loc_top < $(document).scrollTop() && window.innerWidth < 480) {
+                    head.addClass("abfix");
+                    $("#layout_body").addClass("abfix");
+                    obj.addClass("flying");
+                    if (!$('#gonBox').length) {
+                        $('#layout_header .logo_wrap').before('<div id="gonBox"></div>');
+                        $('#gonBox').css('height', obj_H + 'px');
+                    }
+                } else {
+                    head.removeClass("abfix");
+                    $("#layout_body").removeClass("abfix");
+                    obj.removeClass('flying');
+                    if ($('#gonBox').length) {
+                        $('#gonBox').remove();
+                    }
+                };
+                var hh = $(".logo_wrap").height();
+                if ($(document).scrollTop() > hh * 2) {
+                    $(".layout_header").addClass("sticky");
+                    $(".layout_body").addClass("sticky");
+                    $(".cusLnb").addClass("sticky");
+                } else {
+                    $(".layout_header").removeClass("sticky");
+                    $(".layout_body").removeClass("sticky");
+                    $(".cusLnb").removeClass("sticky");
+                };
+            });
+        }
+
+        $(function () {
+            // 텍스트 수정기능을 통해 소스에 박혀있는 카테고리 삭제시 --> 항목 삭제
+            $('#cateSwiper .custom_nav_link').each(function (e) {
+                if ($(this).find('a').text() == '') {
+                    $(this).remove();
+                }
+            });
+
+            /* 카테고리 활성화 */
+            var url2, cateIndex;
+            $('#layout_header .designCategoryNavigation .respCategoryList>li').each(function () {
+                url2 = $(this).find('a').attr('href');
+                if (REQURL == url2) {
+                    cateIndex = $(this).index();
+                } else if (REQURL != url2 && (REQURL.substr(0, REQURL.length - 4) == url2 || REQURL.substr(0, REQURL.length - 8) == url2)) {
+                    // 1depth 카테고리 일치하는 요소가 없는 경우 2뎁스에서 검색
+                    cateIndex = $(this).index();
+                }
+            });
+            $('#layout_header .designCategoryNavigation .respCategoryList>li').eq(cateIndex).addClass('on');
+            /* //카테고리 활성화 */
+
+            /* 카테고리 swiper 동작( 1024 미만인 경우 동작, 1024 이상인 경우 : 마우스 오버시 서브메뉴 노출 ) */
+            var slideshowSwiper = undefined;
+            if (window.innerWidth < 1280 && $('#cateSwiper .designCategoryNavigation').length > 0) {
+                $('#cateSwiper .designCategoryNavigation ul.respCategoryList>li').addClass('swiper-slide');
+                slideshowSwiper = new Swiper('#cateSwiper .designCategoryNavigation', {
+                    wrapperClass: 'respCategoryList',
+                    slidesPerView: 'auto'
+                });
+                slideshowSwiper.slideTo((cateIndex - 1), 800, false);
+            } else {
+                $('#cateSwiper .designCategoryNavigation ul.respCategoryList>li').removeClass('swiper-slide');
+                $('#layout_header .respCategoryList .categoryDepth1').hover(
+                    function () { $(this).find('.categorySub').show(); },
+                    function () { $(this).find('.categorySub').hide(); }
+                );
+            }
+            $(window).resize(function () {
+                if (window.innerWidth != WINDOWWIDTH) {
+                    if (window.innerWidth < 1280 && $('#cateSwiper .designCategoryNavigation').length > 0 && slideshowSwiper == undefined) {
+                        $('#cateSwiper .designCategoryNavigation ul.respCategoryList>li').addClass('swiper-slide');
+                        $('#layout_header .respCategoryList .categoryDepth1').off('hover');
+                        slideshowSwiper = new Swiper('#cateSwiper .designCategoryNavigation', {
+                            wrapperClass: 'respCategoryList',
+                            slidesPerView: 'auto'
+                        });
+                        slideshowSwiper.slideTo((cateIndex - 1), 800, false);
+                    } else if (window.innerWidth > 1279 && slideshowSwiper != undefined) {
+                        slideshowSwiper.slideTo(0, 800, false);
+                        $('#cateSwiper .designCategoryNavigation ul.respCategoryList>li').removeClass('swiper-slide');
+                        slideshowSwiper.destroy();
+                        slideshowSwiper = undefined;
+                        $('#layout_header .respCategoryList .categoryDepth1').hover(
+                            function () { $(this).find('.categorySub').show(); },
+                            function () { $(this).find('.categorySub').hide(); }
+                        );
+                    }
+                }
+            });
+            /* //카테고리 swiper 동작( 1024 미만인 경우 동작, 1024 이상인 경우 : 마우스 오버시 서브메뉴 노출 ) */
+
+            //================= 카테고리 전체 네비게이션 START ====================
+            $('.categoryAllBtn').click(function () {
+                $('#categoryAll_wrap .categoryAllContainer').load('/common/category_all_navigation', function () {
+                    $('#categoryAll_wrap').show();
+                    $('body').css('overflow', 'hidden');
+                });
+            });
+            $('#categoryAll_wrap').on('click', '.categoryAllClose', function () {
+                $('#categoryAll_wrap').hide();
+                $('body').css('overflow', 'auto');
+            });
+            //================= 카테고리 전체 네비게이션 END  ====================
+
+            //================= 브랜드 전체 네비게이션 START ====================
+            $('.brandAllBtn').click(function () {
+                $('#brandAll_wrap .brandAllContainer').load('/common/brand_all_navigation', function () {
+                    $('#brandAll_wrap').show();
+                    $('body').css('overflow', 'hidden');
+                });
+            });
+            $('#brandAll_wrap').on('click', '.brandAllClose', function () {
+                $('#brandAll_wrap').hide();
+                $('body').css('overflow', 'auto');
+            });
+            //================= 브랜드 전체 네비게이션 END  ====================
+
+            //================= 지역 전체 네비게이션 START ====================
+            $('.locationAllBtn').click(function () {
+                $('#locationAll_wrap .locationAllContainer').load('/common/location_all_navigation', function () {
+                    $('#locationAll_wrap').show();
+                    $('body').css('overflow', 'hidden');
+                });
+            });
+            $('#locationAll_wrap').on('click', '.locationAllClose', function () {
+                $('#locationAll_wrap').hide();
+                $('body').css('overflow', 'auto');
+            });
+            //================= 지역 전체 네비게이션 END  ====================
+
+            // GNB 검색 관련
+            $('#respTopSearch .search_open_btn').click(function () {
+                $('#respTopSearch .search_form').addClass('animating');
+                $('#respTopSearch .search_text').focus();
+            });
+            $('#respTopSearch .search_close_btn').click(function () {
+                $('#respTopSearch .search_form').removeClass('animating');
+            });
+
+            // 타이틀바 띄우기
+            flyingTitleBar();
+            $(window).on('resize', function () {
+                if (window.innerWidth != WINDOWWIDTH) {
+                    flyingTitleBar();
+                }
+            });
+
+            /* 카테고리 네비게이션 서브레이어 포지션 변화 */
+            var category1DepthNum = $('.respCategoryList .categoryDepth1').length;
+            var rightCategoryStandard = Math.floor(category1DepthNum / 2);
+            $('.respCategoryList .categoryDepth1').each(function (e) {
+                if (e > rightCategoryStandard) {
+                    $('.respCategoryList .categoryDepth1').eq(e).addClass('right_area');
+                }
+            });
+            /* 카테고리 네비게이션 서브레이어 포지션 변화 */
+
+            $('.designPopupBand .designPopupClose').on('click', function () {
+                // 띠배너 닫기 클릭시
+            });
+        });
+    </script>
+    <!-- bigin common code start -->
+    <script>
+        (function (w, d, s, l, i, c) {
+            w["_b_g_e_b_f"] = w["_b_g_e_b_f"] ? w["_b_g_e_b_f"] : [];
+            w[l] = w[l] ? w[l] : {};
+            w[l].user = function (c, d) {
+                w["_b_g_e_b_f"].push({ t: "user", a1: c, a2: d });
+            }
+            w[l].event = function (c, d, t) {
+                w["_b_g_e_b_f"].push({ t: "event", a1: c, a2: d, a3: t ? t : new Date().getTime() });
+            }
+            w[l].track = function (c, d) {
+                w["_b_g_e_b_f"].push({ t: "track", a1: c, a2: d });
+            }
+            function fEv() {
+                if (w["_b_g_e_b_f"] && w["_b_g_e_b_f"].length > 0) {
+                    for (var i = 0; i < w["_b_g_e_b_f"].length; i++) {
+                        var ev = w["_b_g_e_b_f"][i]
+                        w[l][ev["t"]](ev["a1"], ev["a2"], ev["a3"])
+                    }
+                }
+            }
+            var f = d.getElementsByTagName(s)[0], j = d.createElement(s);
+            j.async = true;
+            j.src = '/sdk.bigin.io/v1/bigin.sdk.js';
+            var u = navigator.userAgent.toLowerCase(), h = {
+                projectID: i,
+                currencyCode: c
+            };
+            if ((u.indexOf('msie') !== -1) && parseInt(u.split('msie')[1]) < 9) {
+                var r = setInterval(function () {
+                    if (w[l] !== undefined) {
+                        clearInterval(r);
+                        w[l].config(h);
+                        fEv();
+                    }
+                }, 50);
+            } else {
+                j.onload = function () {
+                    w[l].config(h)
+                    fEv();
+                };
+            }
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'bigin', '7HE1Z7390E-1', 'KRW');
+    </script>
+    <!-- bigin common code end -->
+    <!-- ================= #LAYOUT_HEADER :: END. 파일위치 : layout_header/standard.html (default) ================= -->
+</div>
+</html>

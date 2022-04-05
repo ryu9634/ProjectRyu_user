@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+
+<div th:fragment="mypage_zzim_con(${zzimList})">
+<div class="ab_wish_wrap">
+    <form name="wish_form" id="wish_form" method="post">
+        <ul class="wish_head">
+            <li class="chk_box"><label class="checkbox_allselect"><input type="checkbox" class="btn_select_all"><span>전체선택</span></label></li>
+            <li class="img_area">선택</li>
+            <li class="wish_name">상품정보</li>
+            <li class="consumer_price">판매가</li>
+            <li class="sale_price">할인가</li>
+            <li class="cart">장바구니</li>
+        </ul>
+        <div class="wish_wrap">
+            <th:block th:each="zzim : ${zzimList}">
+            <ul id="wishList" class="wish_list ab_wish_list">
+                <li>
+                    <div class="chk_box"><label><input type="checkbox" name="wish_seq[]" value="1925"></label></div>
+                    <div class="img_area"><a th:href="@{../goods/view(id=${zzim.goodsid})}"><img th:src="${zzim.goodsimg}" width="170" align="absmiddle" hspace="5" style="border:1px solid #ddd;"></a></div>
+                    <div class="wish_name">
+                        <div class="name"><a th:href="@{../goods/view(id=${zzim.goodsid})}" th:text="${zzim.goodsname}"></a></div>
+                        <div class="price">
+                            <div class="consumer_price"><span class="prc_title">상품금액 : </span><span th:text="${zzim.goodsprice}" >원</span></div>
+                            <div class="sale_price"><span class="prc_title">할인금액 : </span><span th:text="${zzim.goodssaleprice}">원</span></div>
+                        </div>
+                    </div>
+                    <div class="consumer_price"><span class="prc_title">상품금액 : </span><span th:text="${zzim.goodsprice}" >원</span></div>
+                    <div class="sale_price"><span class="prc_title">할인금액 : </span><span th:text="${zzim.goodssaleprice}">원</span></div>
+                    <div class="cart">
+
+                        <button type="button" name="cart" id="wishcart_1925" class="btn_resp wishcart">장바구니 추가</button>
+                    </div>
+                </li>
+            </ul>
+            </th:block>
+        </div>
+        <div class="btn_area">
+            <!--button type="button" class="btn_ch_add">선택한 상품 장바구니 추가</button-->
+            <div>
+                <button type="button" class="btn_ch_del">전체 상품 삭제</button>
+                <button type="button" class="btn_select_del">선택한 상품 삭제</button>
+            </div>
+        </div>
+
+        <div class="paging_navigation">
+            <a class="on red">1</a>&nbsp;
+        </div>
+    </form>
+</div>
+</div>
+</html>

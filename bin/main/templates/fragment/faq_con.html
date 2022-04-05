@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+
+<div th:fragment="faq_con(${faqList})">
+<ul class="faq_new">
+    <th:block th:each="faq : ${faqList}">
+    <li>
+        <div class="question">
+            <p class="subject pointer boad_faqview_btn" board_seq="32927" th:> <span class="cat" th:text="${faq.category}"></span> <span class="title" th:text="${faq.title}"></span></p>
+        </div>
+        <div id="faqcontent_32927" class="answer hide">
+            <div class="body_qa"><!--타이틀-->
+                <p class="qa_Q" th:text="${faq.title}"></p>
+                <p>&nbsp;</p>
+                <ul>
+                    <li class="qa_li qa_step_01">&nbsp;</li>
+                    <li class="qa_li qa_thum"><img th:src="@{../upload/RN_201660914_editor_image.jpg}" style="height:136px; width:205px" /></li>
+                    <li class="qa_li qa_txt"><span style="color: rgb(255, 0, 0);">&nbsp;</span><span th:text="${faq.answer}"></span></li>
+                    <li class="clear_both qa_dot">&nbsp;</li>
+                </ul>
+            </div>
+
+        </div>
+    </li>
+    </th:block>
+</ul>
+</div>
+</html>
